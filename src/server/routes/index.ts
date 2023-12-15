@@ -5,6 +5,9 @@ import { CidadesControler } from './../controllers'
 const router = Router()
 
 router.get('/',(req, res) => res.send('Hello, world!'))
-router.post('/cidades', CidadesControler.create)
+router.post(
+  '/cidades',
+  CidadesControler.createValidation,
+  CidadesControler.create)
 
 export { router }
