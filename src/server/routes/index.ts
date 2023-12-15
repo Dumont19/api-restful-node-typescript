@@ -1,13 +1,10 @@
 import Router from 'express'
-import { StatusCodes } from 'http-status-codes'
+
+import { CidadesControler } from './../controllers'
 
 const router = Router()
 
 router.get('/',(req, res) => res.send('Hello, world!'))
-
-router.post('/test', (req, res) => {
-  console.log(req.body)
-  return res.status(StatusCodes.ACCEPTED).json(req.body)
-})
+router.post('/cidades', CidadesControler.create)
 
 export { router }
